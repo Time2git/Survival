@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour {
     GameObject player;
     private PlayerMotor motor;
     Animator animator;
-    System.Random rand = new System.Random();
+    public Transform posTarget;
+    public float turnSpeed;
 
     void Start() {
         motor = GetComponent<PlayerMotor>();
@@ -19,31 +20,29 @@ public class PlayerController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        float xMov = Input.GetAxisRaw("Horizontal");
-        float zMov = Input.GetAxisRaw("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-        if((zMov == 0) && (xMov == 0))
-        {
-            animator.SetBool("Run", false);
-            animator.SetBool("RunBack", false);
-        }
-        if(zMov >= 0.1f)
-        {
-            animator.SetBool("Run", true);
-            animator.SetBool("RunBack", false);
-        }
+        PlayAnim(horizontal, vertical);
 
-        if (zMov <= -0.1f)
+        if((horizontal != 0) || (vertical != 0))
         {
-            animator.SetBool("RunBack", true);
-            animator.SetBool("Run", false);
+            Vector3 dir = posTarget.position - transform.position;
+            dir.y = 0;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), turnSpeed * Time.deltaTime);
         }
 
 
-        Vector3 movHor = transform.right * xMov;
-        Vector3 movVer = transform.forward * zMov;
+        Vector3 movHor = transform.right * horizontal;
+        Vector3 movVer = transform.forward * vertical;
         Vector3 velocity = (movHor + movVer).normalized * speed;
 
         motor.Move(velocity);
+    }
+
+    public void PlayAnim(float horizontal, float vertical)
+    {
+        animator.SetFloat("Horizontal", horizontal);
+        animator.SetFloat("Vertical", vertical);
     }
 }
