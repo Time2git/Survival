@@ -29,7 +29,6 @@ G:\Survival\Survival\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
 G:\Survival\Survival\Temp\bin\Debug\Mono.Cecil.Mdb.dll
 G:\Survival\Survival\Temp\bin\Debug\Unity.CecilTools.dll
 G:\Survival\Survival\Temp\bin\Debug\Mono.Cecil.Pdb.dll
-G:\Survival\Survival\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 G:\Survival\Survival\Temp\bin\Debug\UnityEngine.xml
 G:\Survival\Survival\Temp\bin\Debug\UnityEditor.xml
 G:\Survival\Survival\Temp\bin\Debug\UnityEditor.Advertisements.xml

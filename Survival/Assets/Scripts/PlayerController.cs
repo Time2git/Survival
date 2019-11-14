@@ -5,14 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour {
 
-    [SerializeField]
     private float speed = 5f;
-    [SerializeField]
-    GameObject player;
+    public GameObject player;
     private PlayerMotor motor;
-    Animator animator;
     public Transform posTarget;
+    public Transform forwardDive, backDive, leftDive, rightDive;
     public float turnSpeed;
+    Animator animator;
 
     void Start() {
         motor = GetComponent<PlayerMotor>();
@@ -25,6 +24,9 @@ public class PlayerController : MonoBehaviour {
 
         PlayAnim(horizontal, vertical);
 
+        if (Input.GetKeyDown(KeyCode.D))
+            transform.rotation *= Quaternion.Euler(0, 90, 0);
+
         if((horizontal != 0) || (vertical != 0))
         {
             Vector3 dir = posTarget.position - transform.position;
@@ -32,6 +34,11 @@ public class PlayerController : MonoBehaviour {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), turnSpeed * Time.deltaTime);
         }
 
+        //перекат
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("Dive", true);
+        }
 
         Vector3 movHor = transform.right * horizontal;
         Vector3 movVer = transform.forward * vertical;

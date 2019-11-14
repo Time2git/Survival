@@ -17,7 +17,6 @@ G:\Survival\Survival\Temp\bin\Debug\Unity.UNetWeaver.dll
 G:\Survival\Survival\Temp\bin\Debug\Unity.CecilTools.dll
 G:\Survival\Survival\Temp\bin\Debug\Mono.Cecil.Pdb.dll
 G:\Survival\Survival\Temp\bin\Debug\Mono.Cecil.Mdb.dll
-G:\Survival\Survival\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 G:\Survival\Survival\Temp\bin\Debug\UnityEngine.xml
 G:\Survival\Survival\Temp\bin\Debug\UnityEditor.xml
 G:\Survival\Survival\Temp\bin\Debug\UnityEngine.UI.xml
@@ -32,3 +31,4 @@ G:\Survival\Survival\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 G:\Survival\Survival\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 G:\Survival\Survival\obj\Debug\Assembly-CSharp.dll
 G:\Survival\Survival\obj\Debug\Assembly-CSharp.pdb
+G:\Survival\Survival\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
